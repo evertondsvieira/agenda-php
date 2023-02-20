@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="index.css">
     <title>Agenda</title>
 </head>
 <body>
-    <header>
-        <ul>
+    <header class="header">
+        <p>Agenda<p>
+        <ul class=header-ul>
             <li><a href="index.php">Home</a></li>
             <li><a href="?page=add">Adicionar novo contato</a></li>
             <li><a href="?page=list">Listar contato</a></li>
