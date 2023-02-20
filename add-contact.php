@@ -1,5 +1,13 @@
+<header class="header">
+    <p>Agenda<p>
+    <ul class=header-ul>
+        <li><a href="index.php">Home</a></li>
+        <li><a href="?page=add">Adicionar novo contato</a></li>
+        <li><a href="?page=list">Listar contato</a></li>
+    </ul>
+</header>
+    
 <h1>Novo contato</h1>
-
 <form action="?page=save" method="POST">
     <input type="hidden" name="action" value="create">
     <div>
