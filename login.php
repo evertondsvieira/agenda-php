@@ -1,6 +1,5 @@
 <?php
     session_start();
-
     if(empty($_POST) or (empty($_POST["username"]) or (empty($_POST["password"])))){
         print "<script>location.href='index.php';</script>";
     }
@@ -20,8 +19,9 @@
 
     if($qtd > 0){
         $_SESSION['username'] = $username;
-        print "<script>location.href='list-contact.php';</script>";
+        print "<script>location.href='dashboard.php';</script>";
     } else {
         print "<script>alert('Usuário ou senha incorreta');</script>";
         print "<script>location.href='index.php';</script>";
     }
+?>
