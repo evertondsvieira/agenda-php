@@ -24,7 +24,7 @@
                     <button class='update-button' onClick=\"location.href='?page=update&id=".$row->id."';\">Editar</button>
                     <button class='delete-button' onClick=\"if(confirm('Tem certeza que deseja excluir?')){location.href='?page=save&action=destroy&id=".$row->id."';}else{false}\">Excluir</button>
                 </td>";
-                print "</tr/>";
+                print "</tr>";
             }
             print "</table>";
         print "</div>";
