@@ -116,6 +116,7 @@ a{
     background-color: #FFFFFF;
     text-align: left;
     font-family: 'Lexend', sans-serif;
+    z-index: 1;
 }
 
 th{
@@ -165,29 +166,59 @@ td{
 .welcome{
     margin-top: 20px;
     font-size: 30px;
-    text-align: center;
     font-family: 'Inter', sans-serif;
 }
 
 .description{
     margin-top: 20px;
     font-size: 24px;
-    text-align: center;
     font-family: 'Inter', sans-serif;   
 }
 
 .button-into{
     all: unset;
-    width: 250px;
-    height: 80px;
+    width: 120px;
+    height: 50px;
     border-radius: 8px;
     color: #FFFFFF;
+    font-size: 20px;
+    text-align: center;
+    font-family: 'Lexend', sans-serif;
+    cursor: pointer;
     background-color: green;
 }
 
-.centralize-dashboard-info{
+.centralize-welcome{
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    gap: 5px;
+}
+
+.centralize-gif{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 20px;
+}
+
+.centralize-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.centralize-text-content{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Lexend', sans-serif;
+    font-size: 10px;
+}
+
+.gif{
+    width: 100px;
+    height: 100px;
 }
