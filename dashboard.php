@@ -26,11 +26,13 @@
     <div>
         <?php 
             if (isset($_SESSION['username'])) {
-                print "<h1 class='welcome'>Olá, " . $_SESSION['username'];
-                print "<h1 class='description'>Seja muito bem-vindo ao YourAgenda";
-                print "<h1 class='description'>Espero que aproveite a experiência em nossa plataforma";
-                print "<h1 class='description'>Clique no botão abaixo para ser redirecionado ao painel de controle";
-                print "<button class='button-into'>Vamos lá!</button>";
+                echo "<div class='centralize-welcome'>";
+                echo "<h1 class='welcome'>Olá, " . $_SESSION['username'] . "</h1>";
+                echo "<h1 class='description'>Seja muito bem-vindo ao YourAgenda</h1>";
+                echo "<h1 class='description'>Espero que aproveite a experiência em nossa plataforma</h1>";
+                echo "<h1 class='description'>Clique no botão abaixo para ser redirecionado ao painel de controle</h1>";
+                echo "<button class='button-into' onclick=\"location.href = 'index.php';\">Vamos lá!</button>";
+                echo "</div>";
             } else {
                 print "<h1 class='welcome'>Você não está logado";
             }
