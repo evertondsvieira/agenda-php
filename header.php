@@ -15,9 +15,10 @@
         <p class="logo">Agenda<p>
         <ul class="header-ul">
             <li><a href="index.php">Home</a></li>
-            <li><a href="?page=add">Adicionar novo contato</a></li>
-            <li><a href="?page=list">Listar contato</a></li>
+            <li><a id="add-btn" href="?page=add">Adicionar novo contato</a></li>
+            <li><a id="list-btn" href="?page=list">Listar contato</a></li>
             <li><a href='logout.php'>Sair</a></li>
         </ul>
     </header>
+    <script src="./script.js"></script>
 </body>
