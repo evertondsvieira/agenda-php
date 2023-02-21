@@ -2,6 +2,9 @@
     session_start();
     if (isset($_SESSION['username'])) {
         include("header.php");
+        $showGif = true;
+    } else {
+        $showGif = false;
     }
 ?>
 
@@ -45,6 +48,19 @@
             }
         }
     ?>
+
+    <?php if ($showGif): ?>
+        <div class="centralize-gif">
+            <div class="centralize-content">
+                <img class="gif" src="./hi.gif" alt="hello">
+                <div class="centralize-text-content">
+                    <h2>Navague e descubra</h2>
+                    <h2>as funcionalidades!</h2>
+                    <h2>Feito com ❤</h2>
+                </div>
+            </div>
+        </div>
+    <?php endif; ?>
 
     <div>
         <div>
