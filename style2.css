@@ -1,0 +1,20 @@
+.add-register{
+    font-size: 32px;
+    font-family: 'Lexend', sans-serif;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.centralize-into-register{
+    margin-top: 10px; 
+    display:flex;
+    justify-content:center; 
+    gap: 5px; 
+    font-family: Lexend;
+}
+
+.button-into-register{
+    color: blue; 
+    text-decoration: underline; 
+    cursor: pointer;
+}
