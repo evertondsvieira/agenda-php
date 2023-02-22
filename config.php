@@ -1,8 +1,14 @@
 <?php
-    define("HOST", "localhost");
-    define("USER", "root");
-    define("PASSWORD", "");
-    define("BASE", "agenda");
 
-    $conn = new MySQLi(HOST, USER, PASSWORD, BASE);
+$host = "localhost";
+$user = "root";
+$password = "12709Everton$";
+$base = "agenda";
+
+$conn = mysqli_connect($host, $user, $password, $base);
+if(!$conn){
+    die("Algo deu errado;");
+}
+
+?>
     
