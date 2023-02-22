@@ -7,7 +7,6 @@
         $showGif = false;
     }
 ?>
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -31,28 +30,7 @@
             include("home.php");
         } else {
             if (!isset($_SESSION['username'])) {
-                echo '
-                    <div class="centralize-form-login">
-                        <h1 class="login-name">Login</h1>
-                        <form action="login.php" method="POST">
-                            <div class="centralize-input">
-                                <label>Username</label>
-                                <input class="input" type="text" name="username">
-                            </div>
-                            <div class="centralize-input">
-                                <label>Senha</label>
-                                <input class="input" type="password" name="password"> 
-                            </div>
-                            <div class="centralize-button">
-                                <button class="button-submit" type="submit">Enviar</button>
-                            </div>
-                            <div class="centralize-into-register">
-                                <p>Ainda não tem cadastro?</p>
-                                <p class=\'button-into-register\' onclick="location.href = \'add-user.php\';">Vamos lá!</p>
-                            </div>                        
-                        </form>
-                    </div>
-                ';
+                include("login-page.php");
             }
         }
     ?>
@@ -70,29 +48,28 @@
         </div>
     <?php endif; ?>
 
-                <?php
-                    include("config.php");
-                    switch(@$_REQUEST["page"]){
-                        case "add":
-                            include("add-contact.php");
-                        break;
-                        case "list":
-                            include("list-contact.php");
-                        break;
-                        case "update":
-                            include("update-contact.php");
-                        break;
-                        case "save":
-                            include("save-contact.php");
-                        break;
-                        case "add-user":
-                            include("add-user.php");
-                        break;
-                        case "saveUser":
-                            include("save-user.php");
-                        break;
-                    }
-                ?>
-
+    <?php
+        include("config.php");
+        switch(@$_REQUEST["page"]){
+            case "add":
+                include("add-contact.php");
+                break;
+            case "list":
+                include("list-contact.php");
+                break;
+            case "update":
+                include("update-contact.php");
+                break;
+            case "save":
+                include("save-contact.php");
+                break;
+            case "add-user":
+                include("add-user.php");
+                break;
+            case "saveUser":
+                include("save-user.php");
+                break;
+        }
+    ?>
 </body>
 </html>
