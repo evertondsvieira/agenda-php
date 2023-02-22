@@ -21,62 +21,6 @@
     </header>
 
     <div class="centralize-form">
-        <?php
-        if(isset($_POST["submit"])){
-            $username = $_POST['username'];
-            $password = $_POST['password'];
-            $passwordRepeat = $_POST['passwordRepeat'];
-            $passwordHash = password_hash($password, PASSWORD_DEFAULT);
-            $email = $_POST['email'];
-            $error = array();
-            if(empty($username) OR empty($password) OR empty($email)){
-                array_push($error, "Todos os campos precisam ser preenchidos");
-            }
-            if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
-                array_push($error, "Email não é valido");
-            }
-            if(strlen($password)<4){
-                array_push($error, "Senha deve ser maior que 4 digitos");
-            }
-            if($password!==$passwordRepeat){
-                array_push($error, "As senhas não combinam");
-            }
-            require_once "config.php";
-
-            $sql = "SELECT * FROM user WHERE email = '$email'";
-            $result = mysqli_query($conn, $sql);
-            $rowCount = mysqli_num_rows($result);
-            if($rowCount > 0){
-                array_push($error, "Email já registrado");
-            }
-
-            $sql = "SELECT * FROM user WHERE username = '$username'";
-            $result = mysqli_query($conn, $sql);
-            $rowCount = mysqli_num_rows($result);
-            if($rowCount > 0){
-                array_push($error, "Username já registrado");
-            }
-
-            if(count($error)>0){
-                foreach($error as $error){
-                    echo "<div>$error</div>";
-                } 
-            } else {
-                $sql = "INSERT INTO user (username, password, email) VALUES ( ?, ?, ? )";
-                $stmt = mysqli_stmt_init($conn);
-                $prepareStmt = mysqli_stmt_prepare($stmt, $sql);
-                if($prepareStmt){
-                    mysqli_stmt_bind_param($stmt,"sss",$username,$passwordHash, $email);
-                    mysqli_stmt_execute($stmt);
-                    echo "<div class='alert alert-sucess'>Você foi registrado com sucesso</div>";
-                    echo "<script>location.href='index.php'</script>";
-                } else {
-                    die("Algo deu errado");
-                }
-            }
-        }
-        ?>
-
         <h1 class="add-register">Registre-se</h1>
         <form action="add-user.php" method="POST">
             <input type="hidden" name="actionUser" value="createUser">
@@ -96,10 +40,59 @@
                 <label>Digite a senha novamente:</label>
                 <input class="input" type="password" name="passwordRepeat">
             </div>
+            <span class="error" id="error-message"></span>
+            <?php
+            if(isset($_POST["submit"])){
+                $username = $_POST['username'];
+                $password = $_POST['password'];
+                $passwordRepeat = $_POST['passwordRepeat'];
+                $passwordHash = password_hash($password, PASSWORD_DEFAULT);
+                $email = $_POST['email'];
+                $error = array();
+
+                require_once "config.php";
+
+                $sql = "SELECT * FROM user WHERE email = '$email'";
+                $result = mysqli_query($conn, $sql);
+                $rowCount = mysqli_num_rows($result);
+                if($rowCount > 0){
+                    $error_message = "<div style='color: red; font-size: 14px; font-family: Lexend;'>Email já registrado</div>";
+                    array_push($error, $error_message);
+                }
+                
+                $sql = "SELECT * FROM user WHERE username = '$username'";
+                $result = mysqli_query($conn, $sql);
+                $rowCount = mysqli_num_rows($result);
+                if($rowCount > 0){
+                    $error_message = "<div style='color: red; font-size: 14px; font-family: Lexend;'>Username já registrado</div>";
+                    array_push($error, $error_message);
+                }
+
+                if(count($error)>0){
+                    foreach($error as $error){
+                        echo "<div>$error</div>";
+                    } 
+                } else {
+                    $sql = "INSERT INTO user (username, password, email) VALUES ( ?, ?, ? )";
+                    $stmt = mysqli_stmt_init($conn);
+                    $prepareStmt = mysqli_stmt_prepare($stmt, $sql);
+                    if($prepareStmt){
+                        mysqli_stmt_bind_param($stmt,"sss",$username,$passwordHash, $email);
+                        mysqli_stmt_execute($stmt);
+                        echo "<script>alert('Você foi cadastrado com sucesso');</script>";
+                        echo "<script>location.href='index.php'</script>";
+                    } else {
+                        die("Algo deu errado");
+                    }
+                }
+            }
+            ?>
             <div class="centralize-button">
                 <button class="button-submit" type="submit" name="submit">Enviar</button>
             </div>
         </form>
     </div>
+    
+    <script src="add-user-form-validation.js"></script>
 </body>
 </html>
