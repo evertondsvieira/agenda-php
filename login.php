@@ -5,7 +5,6 @@ if(empty($_POST) or (empty($_POST["username"]) or (empty($_POST["password"])))){
 }
 
 include('config.php');
-
 $username = $_POST['username'];
 $password = $_POST['password'];
 
@@ -20,6 +19,8 @@ $qtd = $res->num_rows;
 if($qtd > 0){
     if(password_verify($password, $row->password)){
         $_SESSION['username'] = $username;
+        $user_id = $row->id;
+        $_SESSION['id'] = $user_id;
         print "<script>location.href='dashboard.php';</script>";
     } else {
         print "<script>alert('Usuário ou senha incorreta');</script>";
