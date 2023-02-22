@@ -17,11 +17,7 @@
             <input class="input" type="text" name="phone">
             <p id="erro-phone" style="color: red"></p>
         </div>
-        <div class="centralize-input">
-            <label>User id:</label>
-            <input class="input" type="text" name="user_id">
-            <p id="erro-id" style="color: red"></p>
-        </div>
+        <input type="hidden" name="user_id" value="<?php echo $_SESSION['id']; ?>">
         <div class="centralize-button">
             <button class="button-submit" type="submit" name="submit">Enviar</button>
         </div>
