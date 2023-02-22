@@ -50,6 +50,14 @@ a{
     flex-direction: column;
 }
 
+.centralize-form-login{
+    margin-top: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
 .login-name{
     font-size: 32px;
     font-family: 'Lexend', sans-serif;
@@ -72,6 +80,7 @@ a{
     width: 300px;
     height: 25px;
     border-radius: 4px;
+    margin-bottom: 5px;
 }
 
 .centralize-button{
@@ -86,6 +95,12 @@ a{
     border-radius: 4px;
     background-color: black;
     font-family: 'Lexend', sans-serif;
+}
+
+.register-into{
+    text-align: center;
+    text-decoration: underline;
+    color: blue;
 }
 
 /*Add contact*/
