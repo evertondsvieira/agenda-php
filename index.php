@@ -18,6 +18,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lexend:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style2.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- <script src="check-form.js"></script> -->
+    <script src="validation-form.js"></script>
     <title>YourAgenda</title>
 </head>
 <body>
@@ -28,7 +32,7 @@
         } else {
             if (!isset($_SESSION['username'])) {
                 echo '
-                    <div class="centralize-form">
+                    <div class="centralize-form-login">
                         <h1 class="login-name">Login</h1>
                         <form action="login.php" method="POST">
                             <div class="centralize-input">
@@ -42,6 +46,10 @@
                             <div class="centralize-button">
                                 <button class="button-submit" type="submit">Enviar</button>
                             </div>
+                            <div class="centralize-into-register">
+                                <p>Ainda não tem cadastro?</p>
+                                <p class=\'button-into-register\' onclick="location.href = \'add-user.php\';">Vamos lá!</p>
+                            </div>                        
                         </form>
                     </div>
                 ';
@@ -54,7 +62,7 @@
             <div class="centralize-content">
                 <img class="gif" src="./hi.gif" alt="hello">
                 <div class="centralize-text-content">
-                    <h2>Navague e descubra</h2>
+                    <h2>Navegue e descubra</h2>
                     <h2>as funcionalidades!</h2>
                     <h2>Feito com ❤</h2>
                 </div>
@@ -62,9 +70,6 @@
         </div>
     <?php endif; ?>
 
-    <div>
-        <div>
-            <div>
                 <?php
                     include("config.php");
                     switch(@$_REQUEST["page"]){
@@ -80,10 +85,14 @@
                         case "save":
                             include("save-contact.php");
                         break;
+                        case "add-user":
+                            include("add-user.php");
+                        break;
+                        case "saveUser":
+                            include("save-user.php");
+                        break;
                     }
                 ?>
-            </div>
-        </div>
-    </div>
+
 </body>
 </html>
