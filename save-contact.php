@@ -48,8 +48,8 @@
                 print "<script>alert('Não foi possível atualizar');</script>";
                 print "<script>location.href='?page=list'</script>";
             }
-
             break;
+
         case "destroy":
             $sql = "DELETE FROM contact WHERE id=".$_REQUEST["id"];
 
