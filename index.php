@@ -1,7 +1,7 @@
 <?php
     session_start();
     if (isset($_SESSION['username'])) {
-        include("header.php");
+        include("./components/header.php");
         $showGif = true;
     } else {
         $showGif = false;
@@ -19,7 +19,6 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="style2.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <!-- <script src="check-form.js"></script> -->
     <script src="validation-form.js"></script>
     <title>YourAgenda</title>
 </head>
@@ -27,10 +26,9 @@
     <?php
         if ($_SERVER['REQUEST_URI'] == '/') {
             include("index.php");
-            include("home.php");
         } else {
             if (!isset($_SESSION['username'])) {
-                include("login-page.php");
+                include("./pages/login-page.php");
             }
         }
     ?>
@@ -38,7 +36,7 @@
     <?php if ($showGif): ?>
         <div class="centralize-gif">
             <div class="centralize-content">
-                <img class="gif" src="./hi.gif" alt="hello">
+                <img class="gif" src="./assets/hi.gif" alt="hello">
                 <div class="centralize-text-content">
                     <h2>Navegue e descubra</h2>
                     <h2>as funcionalidades!</h2>
@@ -49,19 +47,19 @@
     <?php endif; ?>
 
     <?php
-        include("config.php");
+        include("./database/config.php");
         switch(@$_REQUEST["page"]){
             case "add":
-                include("add-contact.php");
+                include("./pages/add-contact.php");
                 break;
             case "list":
-                include("list-contact.php");
+                include("./pages/list-contact.php");
                 break;
             case "update":
-                include("update-contact.php");
+                include("./pages/update-contact.php");
                 break;
             case "save":
-                include("save-contact.php");
+                include("./pages/save-contact.php");
                 break;
             case "add-user":
                 include("add-user.php");

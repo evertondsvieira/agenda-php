@@ -93,6 +93,6 @@
         </form>
     </div>
     
-    <script src="add-user-form-validation.js"></script>
+    <script src="./validations/add-user-form-validation.js"></script>
 </body>
 </html>

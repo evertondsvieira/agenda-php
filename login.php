@@ -4,7 +4,7 @@ if(empty($_POST) or (empty($_POST["username"]) or (empty($_POST["password"])))){
     print "<script>location.href='index.php';</script>";
 }
 
-include('config.php');
+include('./database/config.php');
 $username = $_POST['username'];
 $password = $_POST['password'];
 

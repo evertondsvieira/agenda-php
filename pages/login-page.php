@@ -29,7 +29,7 @@
             <p class='button-into-register' id="register-button">Vamos lá!</p>
         </div>  
     </form>
-<script src="login-page-form-validation.js"></script>
+    <script src="./validations/login-page-form-validation.js"></script>
 </div>
 </body>
 </html>
