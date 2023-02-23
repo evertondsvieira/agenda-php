@@ -29,6 +29,6 @@
             print "</table>";
         print "</div>";
     } else {
-        print "<p>Ainda está vazio!</p>";
+        print "<p style='font-family: Lexend; text-align: center; font-size: px;'>Ainda está vazio!</p>";
     }
 ?>
