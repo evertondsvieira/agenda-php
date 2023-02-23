@@ -1,3 +1,67 @@
+/*Dashboard*/
+
+.welcome{
+    margin-top: 20px;
+    font-size: 30px;
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+}
+
+.description{
+    margin-top: 20px;
+    font-size: 24px;
+    font-family: 'Inter', sans-serif;   
+}
+
+.button-into{
+    all: unset;
+    width: 120px;
+    height: 50px;
+    border-radius: 8px;
+    color: #FFFFFF;
+    font-size: 20px;
+    text-align: center;
+    font-family: 'Lexend', sans-serif;
+    cursor: pointer;
+    background-color: green;
+}
+
+.centralize-welcome{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.centralize-gif{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 20px;
+}
+
+.centralize-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.centralize-text-content{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Lexend', sans-serif;
+    font-size: 10px;
+}
+
+.gif{
+    width: 100px;
+    height: 100px;
+}
+
+/*Register*/
 .add-register{
     font-size: 32px;
     font-family: 'Lexend', sans-serif;
@@ -17,9 +81,4 @@
     color: blue; 
     text-decoration: underline; 
     cursor: pointer;
-}
-
-.error {
-    color: red !important;
-}
-  
+}  
