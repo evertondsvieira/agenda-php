@@ -51,7 +51,7 @@
                 $email = $_POST['email'];
                 $error = array();
 
-                require_once "config.php";
+                require_once "./database/config.php";
 
                 $sql = "SELECT * FROM user WHERE email = '$email'";
                 $result = mysqli_query($conn, $sql);
