@@ -27,7 +27,7 @@
         <div class="centralize-into-register">
             <p>Ainda não tem cadastro?</p>
             <p class='button-into-register' id="register-button">Vamos lá!</p>
-        </div>  
+        </div>
     </form>
     <script src="./validations/login-page-form-validation.js"></script>
 </div>
