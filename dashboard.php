@@ -35,7 +35,7 @@
                 echo "<button class='button-into' onclick=\"location.href = 'index.php';\">Vamos lá!</button>";
                 echo "</div>";
             } else {
-                print "<h1 class='welcome'>Você não está logado";
+                echo "<h1 style='margin-top: 20px; font-size: 30px; font-family: Inter, sans-serif; text-align: center;'>Você não está logado</h1>";
             }
         ?>
     </div>
